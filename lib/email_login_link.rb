@@ -17,7 +17,11 @@ module EmailLoginLink
 
   def self.login_url(email_address)
     domain = get_domain(email_address)
-    return $urls[domain]
+    if $urls.has_key?(domain)
+       return $urls[domain] 
+     else
+      return "http://mail.google.com/a/#{domain}"
+    end
   end
 
   private

@@ -21,4 +21,9 @@ describe EmailLoginLink do
   it 'correctly determines if a custom domain has Google Apps enabled' do
     expect(EmailLoginLink::known_login_url?("user@afterwire.com.au")).to eq(true)
   end
+
+  it 'provides the correct URL for a custom domain that has Google Apps enabled' do
+    expected_sign_in_url = "http://mail.google.com/a/afterwire.com.au"
+    expect(EmailLoginLink::login_url("user@afterwire.com.au")).to eq(expected_sign_in_url)
+  end
 end
