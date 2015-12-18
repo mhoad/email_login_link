@@ -6,13 +6,15 @@ module EmailLoginLink
 
   def self.known_login_url?(email_address)
     domain = get_domain(email_address)
+    result = false
+
     if $urls.has_key?(domain)
-      return true
+      result = true
     elsif check_if_google_apps?(domain)
-      return true
-    else
-      return false
+      result = true
     end
+
+    result
   end
 
   def self.login_url(email_address)
@@ -36,15 +38,10 @@ module EmailLoginLink
       rescue Exception => e
         return false
       end
-      
     end
 
     def self.check_if_google_apps?(domain)
       mx_record = get_mx_record(domain)
-      if mx_record && mx_record.include?("google")
-        return true
-      else
-        return false
-      end
+      mx_record && mx_record.include?("google")
     end
 end
