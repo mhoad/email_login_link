@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Given an e-mail address this gem will check to see if it is able to determine 
                           the appropriate login URL for that service. For example user@gmail.com would
                           return https://accounts.google.com/ServiceLogin?service=mail&continue=https://mail.google.com/mail/}
-  spec.homepage      = "http://www.afterwire.net/"
+  spec.homepage      = "https://github.com/mhoad/email_login_link"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
