@@ -88,6 +88,8 @@ module EmailLoginLink
   $urls["inbox.ru"] = "https://mail.ru/"
   $urls["list.ru"] = "https://mail.ru/"
   $urls["bk.ru"] = "https://mail.ru/"
+  $urls["yandex.ru"] = "https://mail.yandex.ru/"
+  $urls["ya.ru"] = "https://mail.yandex.ru/"
   $urls["bellsouth.net"] = "https://login.yahoo.com/config/login_verify2?.partner=sbc"
   $urls["btinternet.com"] = "https://www.bt.com/btmail"
   $urls["bt.com"] = "https://www.bt.com/btmail"
